@@ -4,7 +4,7 @@ Topics to research:
 
 - Basic web-app
 - Git workflow
-- Tests
+- Tests workflow
 - Deployment
 
 ## Basic web-app
