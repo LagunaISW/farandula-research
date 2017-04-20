@@ -1,0 +1,21 @@
+#!/bin/sh
+
+if [ $# -lt 1 ] ; then
+  echo "Must provide a backend name in (spring|ror|node)"
+  exit 1
+fi
+
+if [ "$1" != "spring" ] ; then
+  if [ "$1" != "ror" ] ; then
+    if [ "$1" != "node" ] ; then
+      echo "Must provide a backend name in (spring|ror|node)"
+      exit 1
+    fi
+  fi
+fi
+
+echo "Run webapp with $1 backend"
+frontend_dir="react-frontend"
+backend_dir="$1-backend"
+(cd $backend_dir; ./run)
+(cd $frontend_dir; ./run)
