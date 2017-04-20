@@ -24,7 +24,7 @@ The user must be able to type a name on the input field:
 
 ![web-app-2](imgs/webapp2.png)
 
-When the user must be able to click the button to send the name to the backend,
+The user must be able to click the button to send the name to the backend,
 then the backend should respond with a message, and the frontend should display
 it on the page:
 
