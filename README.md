@@ -1,4 +1,4 @@
-# Farandula Quantum-HMO Research Repository
+# Farandula Quantum Research Repository
 
 Topics to research:
 
