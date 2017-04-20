@@ -46,10 +46,23 @@ where `<name>` corresponds to the one entered in the text input field, and
 
 The content of this topic can be found in the `git-workflow` directory.
 
+- Explore the Git Flow plugin for using a standard way of branching features,
+bug fixes, etc.
+- Document how to do Pull Requests in GitHub using the Git Flow workflow.
+- How to integrate code reviews with the Pull Request mechanism.
+- If possible: How to automate testing and deployment with GitHub.
+
 ## Tests workflow
 
 The content of this topic can be found in the `tests-workflow` directory.
 
+- Explore various types of testing for the project
+- Test integration with GitHub (https://travis-ci.org/)
+
 ## Deployment
 
 The content of this topic can be found in the `deployment` directory.
+
+- Heroku deployment: dev branch (stage) & release branch (release).
+- Maybe use Docker to minimize configuration problems for the team.
+- One script for build -> test -> deploy
