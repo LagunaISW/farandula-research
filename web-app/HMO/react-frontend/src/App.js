@@ -1,19 +1,34 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
 
-class App extends Component {
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {value: '', response: ''};
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  handleChange(event) {
+    this.setState({value: event.target.value});
+  }
+
+  handleSubmit(event) {
+    event.preventDefault();
+    const name = this.state.value
+    this.setState({ value: '', response: `Hello ${name}, from React`})
+  }
+
   render() {
     return (
-      <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
-        </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
+    <div>
+      <form onSubmit={this.handleSubmit}>
+          Enter your name: <br />
+          <input type="text" value={this.state.value} onChange={this.handleChange}/>
+          {' '}
+          <input type="submit" value="Submit" />
+      </form>
+      <p>{ this.state.response }</p>
+    </div>
     );
   }
 }
