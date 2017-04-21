@@ -1,0 +1,44 @@
+#!/bin/bash
+
+if [ $# -lt 1 ] ; then
+  echo "Must provide a backend name in (spring|ror|node)"
+  exit 1
+fi
+
+if [ "$1" != "spring" ] ; then
+  if [ "$1" != "ror" ] ; then
+    if [ "$1" != "node" ] ; then
+      echo "Must provide a backend name in (spring|ror|node)"
+      exit 1
+    fi
+  fi
+fi
+
+echo "Run webapp with $1 backend"
+frontend_dir="react-frontend"
+backend_dir="$1-backend"
+
+cd $backend_dir
+./run &
+backend_pid=$!
+cd ..
+
+cd $frontend_dir
+./run &
+frontend_pid=$!
+cd ..
+
+echo "BACKEND PID IS $backend_pid"
+echo "FRONTEND PID IS $frontend_pid"
+
+PID_LIST+=" $backend_pid";
+PID_LIST+=" $frontend_pid";
+
+trap "kill $PID_LIST" SIGINT
+
+echo "..."
+
+wait $PID_LIST
+
+echo
+echo "Finished"
