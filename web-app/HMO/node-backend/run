@@ -1,3 +1,5 @@
 #!/bin/sh
 
 echo "Run node JS backend"
+
+npm start
