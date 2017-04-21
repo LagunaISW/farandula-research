@@ -1,4 +1,5 @@
 import React from 'react';
+import axios from 'axios';
 
 class App extends React.Component {
   constructor(props) {
@@ -14,8 +15,14 @@ class App extends React.Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    const name = this.state.value
-    this.setState({ value: '', response: `Hello ${name}, from React`})
+    const name = this.state.value;
+    axios.post('/api/test', { name })
+      .then(res => {
+        this.setState({ value: '', response: res.data.message })
+      })
+      .catch(err => {
+        this.setState({ response: `Something went wrong: ${err}` })
+      });
   }
 
   render() {
