@@ -1,24 +1,21 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
+* Ruby version => 2.3.3p222
 
 * System dependencies
+  Rspec-rails - Testing framework.
+  Factory_girl_rails - A fixtures replacement with a more straightforward syntax. You'll see.
+  Shoulda_matchers - Provides RSpec with additional matchers.
+  Database_cleaner - You guessed it! It literally cleans our test database to ensure a clean state in each test suite.
+  Faker - A library for generating fake data. We'll use this to generate test data.
 
-* Configuration
+* Configuration => Automatic
 
-* Database creation
+* Database creation => Automatic
 
-* Database initialization
+* Database initialization => Automatic
 
 * How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
+  bundle exec rspec
 
 * Deployment instructions
-
-* ...
